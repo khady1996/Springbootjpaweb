@@ -20,6 +20,10 @@ public class Formation {
 	public Formation() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "Formation [id=" + id + ", theme=" + theme + ", description=" + description + "]";
+	}
 	public Long getId() {
 		return id;
 	}
