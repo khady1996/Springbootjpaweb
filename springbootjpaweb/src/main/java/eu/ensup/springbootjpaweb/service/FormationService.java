@@ -26,4 +26,10 @@ public class FormationService implements IFormationService {
 		return dao.findByTheme(theme);
 	}
 
+	@Override
+	public void creerFormation(Formation formation) {
+		// TODO Auto-generated method stub
+		dao.save(formation);
+	}
+
 }

@@ -6,4 +6,5 @@ import eu.ensup.springbootjpaweb.domaine.Formation;
 
 public interface IFormationService {
 	public List<Formation> listeFormationParTheme(String theme);
+	public void creerFormation(Formation formation);
 }

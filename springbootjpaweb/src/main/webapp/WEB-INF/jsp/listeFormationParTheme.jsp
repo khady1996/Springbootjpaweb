@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Bienvenue</title>
 </head>
 <body>
- <h1> Bienvenue </h1>
+
+ <form method="post" action="saveDetails">  
+    Enter Formation Theme : <input type="text" name="theme"/>
+    Enter Formation Description : <input type="text" name="description">
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
