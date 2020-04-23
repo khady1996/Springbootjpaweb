@@ -12,8 +12,7 @@ import java.util.List;
 import eu.ensup.springbootjpaweb.dao.FormationRepository;
 import eu.ensup.springbootjpaweb.domaine.Formation;
 
-@RestController
-@RequestMapping("/formationList")
+@Controller
 public class FormationController {
 
 	private FormationRepository formationRepository;
@@ -22,15 +21,7 @@ public class FormationController {
 	public FormationController(FormationRepository formationRepository) {
 		this.formationRepository = formationRepository;
 	}
-	@RequestMapping("/")
-	public String home() {
-		return "Bienvenue";
-	}
 	
-	@RequestMapping("/toto")
-	public String accueilToto() {
-		return "Bienvenue Toto";
-	}
 	//Pour accéder à la méthode ci-dessous => exple : http://localhost/formationList/Bilan
 	@RequestMapping(value = "/{theme}", method = RequestMethod.GET)
 	public String listerLesFormations(@PathVariable("theme") String theme, Model model) {

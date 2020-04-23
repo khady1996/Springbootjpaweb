@@ -1,5 +1,7 @@
 package eu.ensup.springbootjpaweb;
 
+import java.util.Collections;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,11 +15,21 @@ import org.springframework.web.servlet.view.JstlView;
 import eu.ensup.springbootjpaweb.service.FormationController;
 
 @SpringBootApplication
-
+@RestController
 public class jpawebApplication {
-
+	@RequestMapping("/")
+	public String home() {
+		return "Bienvenue";
+	}
+	
+	@RequestMapping("/toto")
+	public String accueilToto() {
+		return "Bienvenue Toto";
+	}
 	public static void main(String[] args) {
-		SpringApplication.run(jpawebApplication.class, args);
+		SpringApplication app = new SpringApplication(jpawebApplication.class);
+		app.setDefaultProperties(Collections.singletonMap("server.servlet.context-path", "/formationList"));
+		app.run(args);
 	}
 
 }
