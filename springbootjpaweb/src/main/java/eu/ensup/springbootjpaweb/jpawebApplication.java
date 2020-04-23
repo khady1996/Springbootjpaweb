@@ -12,11 +12,13 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import eu.ensup.springbootjpaweb.service.FormationController;
+import eu.ensup.springbootjpaweb.controller.FormationController;
+import eu.ensup.springbootjpaweb.service.FormationService;
 
 @SpringBootApplication
 @RestController
 public class jpawebApplication {
+	
 	@RequestMapping("/")
 	public String home() {
 		return "Bienvenue";
