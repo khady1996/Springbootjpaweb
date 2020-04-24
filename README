@@ -1,2 +1,3 @@
 Faire :
 http://localhost:8080/formationList/ => pour commencer les tests et vous pouvez rajouter le nom du thème pour lequel vous voulez afficher la liste des formations qu'il contient
+http://localhost:8080/formationList/getForm => pour créer une formation en base et puis afficher la formation créée
