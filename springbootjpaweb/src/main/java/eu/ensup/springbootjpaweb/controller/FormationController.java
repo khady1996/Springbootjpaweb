@@ -46,27 +46,23 @@ public class FormationController {
 	}
 
 	//Pour accéder à la méthode ci-dessous => exple : http://localhost/formationList/Spring	
-	@RequestMapping(value = "/{theme}", method = RequestMethod.POST)
-	public String addToFormation(@PathVariable("theme") String theme, Formation formation) {
+	@RequestMapping(value = "/creerFormation", method = RequestMethod.POST)
+	public String addToFormation(@RequestParam("theme") String theme,
+			@RequestParam("description") String description, Formation formation,ModelMap modelMap) {
+
 		System.out.println("Le controleur est dans la méthode addToFormation");
 		formation.setTheme(theme);
+		formation.setDescription(description);
 		service.creerFormation(formation);
-		return "redirect:/Formation/{theme}";
+		modelMap.put("theme", theme);
+		modelMap.put("description", description);
+		return "viewDetails";
 	}
 	
 	@GetMapping("getForm")
 	public String getForm() {
-		return "listeFormationParTheme";
+		return "ajoutFormation";
 	}
 
-	@PostMapping("/saveDetails") // it only support port method
-	public String saveDetails(@RequestParam("theme") String theme,
-			@RequestParam("description") String description, ModelMap modelMap) {
-
-		// write your code to save details
-		modelMap.put("theme", theme);
-		modelMap.put("description", description);
-		return "viewDetails"; // welcome is view name. It will call welcome.jsp
-	}
 
 }

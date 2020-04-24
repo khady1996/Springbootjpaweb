@@ -8,10 +8,6 @@
 </head>
 <body>
 
- <form method="post" action="saveDetails">  
-    Enter Formation Theme : <input type="text" name="theme"/>
-    Enter Formation Description : <input type="text" name="description">
-    <input type="submit" value="Submit">
-</form>
+<h1> Vous voulez lister les formations par thème</h1>
 </body>
 </html>
